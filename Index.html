@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Chitra ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    color: white;
+}
+
+/* 🌟 Stars */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/9QJZ7bH.png') repeat;
+    animation: moveStars 120s linear infinite;
+}
+
+@keyframes moveStars {
+    from {background-position: 0 0;}
+    to {background-position: 10000px 5000px;}
+}
+
+/* 🎬 Start Screen */
+.start-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 85%;
+    display: none;
+}
+
+.line {
+    font-size: 24px;
+    margin: 20px 0;
+    opacity: 0;
+}
+
+/* ✨ Glowing Name */
+.glow {
+    font-size: 34px;
+    color: #ff4da6;
+    text-shadow: 
+        0 0 10px #ff4da6,
+        0 0 20px #ff4da6,
+        0 0 40px #ff4da6,
+        0 0 80px #ff1a75;
+}
+
+/* ❤️ Final line emphasis */
+.final {
+    font-size: 26px;
+    color: #ffd1dc;
+}
+
+/* 💓 Heartbeat */
+.heart {
+    font-size: 36px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0%, 100% {transform: scale(1);}
+    50% {transform: scale(1.3);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- 🎬 Start Screen -->
+<div class="start-screen" id="startScreen">
+    <button class="start-btn" onclick="startExperience()">Click to Start ✨</button>
+</div>
+
+<!-- 🎵 Music -->
+<audio id="music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 💌 Message -->
+<div class="container" id="message">
+
+<div class="line">Somewhere between my silence… and my anger…</div>
+<div class="line">I lost the chance to truly understand you.</div>
+
+<div class="line">If I could go back…</div>
+<div class="line">I wouldn’t argue… I would just listen.</div>
+
+<div class="line">You were never someone I wanted to question…</div>
+<div class="line">you were someone I wanted to feel safe with.</div>
+
+<div class="line">And instead… I became the reason you felt hurt.</div>
+
+<div class="line"><b>I have nothing but respect for you.</b></div>
+
+<div class="line">Not just for who you are…</div>
+<div class="line">but for how you still tried.</div>
+
+<div class="line">I let my fear win over my feelings…</div>
+<div class="line">and I’m truly sorry.</div>
+
+<div class="line glow">CHITRA… ❤️</div>
+
+<div class="line final">If there’s even a small “maybe”…</div>
+<div class="line final">I’ll meet you there… with calm, trust & respect.</div>
+
+</div>
+
+<script>
+function startExperience() {
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("message").style.display = "block";
+
+    let music = document.getElementById("music");
+    music.play();
+
+    let lines = document.querySelectorAll(".line");
+    let delay = 0;
+
+    lines.forEach((line) => {
+        setTimeout(() => {
+            line.style.transition = "opacity 2s";
+            line.style.opacity = 1;
+        }, delay);
+
+        delay += 3500;
+    });
+}
+</script>
+
+</body>
+</html>
